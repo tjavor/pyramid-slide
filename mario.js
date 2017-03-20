@@ -1,24 +1,26 @@
 var brickElem = document.getElementById("brick");
 var heightElem = document.getElementById("height");
 
-brickElem.addEventListener("onchange", drawPyramid);
-heightElem.addEventListener("oninput", drawPyramid);
+brickElem.addEventListener("change", drawPyramid);
+heightElem.addEventListener("input", drawPyramid);
 
 
 function changeType() {
     var brick = brickElem.value;
-    return;
+    return brick;
 }
 
 function changeHeight() {
     var heightStr = heightElem.value;
     var height = parseInt(heightStr);
-    return;
+    return height;
 }
 
-function drawPyramid(changeType, changeHeight) {
-    brick = changeType;
-    height = changeHeight;
+function drawPyramid() {
+    brick = changeType();
+    height = changeHeight();
+
+    document.getElementById("pyramid").innerHTML = "";
 
     for (var row = 0; row < height; row++) {
 
